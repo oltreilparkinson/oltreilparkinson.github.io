@@ -243,33 +243,6 @@
             background: white;
         }
 
-        .playlist-container {
-            background: rgba(255,255,255,0.1);
-            padding: 2rem;
-            border-radius: 15px;
-            backdrop-filter: blur(10px);
-            margin: 2rem auto;
-            max-width: 1000px;
-        }
-
-        .video-wrapper {
-            position: relative;
-            padding-bottom: 56.25%; /* 16:9 ratio */
-            height: 0;
-            overflow: hidden;
-            border-radius: 10px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
-        }
-
-        .video-wrapper iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
         .playlist-intro {
             text-align: center;
             font-size: 1.2rem;
@@ -278,10 +251,10 @@
 
         .video-thumbnails {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
             margin-top: 3rem;
-            max-width: 1200px;
+            max-width: 1400px;
             margin-left: auto;
             margin-right: auto;
         }
@@ -301,21 +274,22 @@
 
         .video-thumbnail iframe {
             width: 100%;
-            height: 180px;
+            height: 200px;
             border: none;
         }
 
         .video-thumbnail-info {
-            padding: 1rem;
+            padding: 1.5rem;
         }
 
         .video-thumbnail-info h4 {
-            font-size: 1rem;
+            font-size: 1.1rem;
             margin-bottom: 0.5rem;
+            color: white;
         }
 
         .video-thumbnail-info p {
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             opacity: 0.9;
         }
 
@@ -433,6 +407,38 @@
             padding: 2rem;
         }
 
+        /* Scroll to top button */
+        .scroll-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            z-index: 1000;
+            font-size: 1.5rem;
+        }
+
+        .scroll-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             h1 {
@@ -454,6 +460,17 @@
 
             .book-cover-hero {
                 max-width: 250px;
+            }
+
+            .video-thumbnails {
+                grid-template-columns: 1fr;
+            }
+
+            .scroll-to-top {
+                bottom: 20px;
+                right: 20px;
+                width: 45px;
+                height: 45px;
             }
         }
 
@@ -581,82 +598,140 @@
     <section class="videos-section" id="video">
         <h2 class="section-title">I Video del Libro</h2>
         <p class="playlist-intro">
-            Guarda tutti i video capitolo per capitolo direttamente dalla playlist YouTube
+            Tutti i video capitolo per capitolo dell'esperienza di Davide
         </p>
-        <div class="playlist-container">
-            <div class="video-wrapper">
-                <iframe 
-                    src="https://www.youtube.com/embed/videoseries?list=PLzL6jV8HDmKSE-23EgB01e8rE2gT8YtdA" 
-                    title="Oltre il Parkinson - Playlist Video"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                    allowfullscreen>
-                </iframe>
-            </div>
-        </div>
-        <p style="text-align: center; margin-top: 2rem; font-size: 1.1rem;">
-            <a href="https://www.youtube.com/playlist?list=PLzL6jV8HDmKSE-23EgB01e8rE2gT8YtdA" 
-               target="_blank" 
-               style="color: white; text-decoration: underline;">
-                Visualizza la playlist completa su YouTube →
-            </a>
-        </p>
-
-        <h3 style="text-align: center; margin: 3rem 0 2rem; font-size: 1.8rem;">Video dei Capitoli</h3>
         <div class="video-thumbnails">
             <div class="video-thumbnail">
                 <iframe src="https://www.youtube.com/embed/5_hVG-nAmNM" title="Capitolo 1 - Il Digiuno" allowfullscreen></iframe>
                 <div class="video-thumbnail-info">
-                    <h4>Capitolo 1 - Il Digiuno</h4>
+                    <h4>01. Il Digiuno</h4>
                     <p>La pratica del digiuno terapeutico</p>
                 </div>
             </div>
             <div class="video-thumbnail">
                 <iframe src="https://www.youtube.com/embed/VKmit766neY" title="Capitolo 2 - Le Crisi Eliminative" allowfullscreen></iframe>
                 <div class="video-thumbnail-info">
-                    <h4>Capitolo 2 - Le Crisi Eliminative</h4>
+                    <h4>02. Le Crisi Eliminative</h4>
                     <p>Il processo di disintossicazione</p>
                 </div>
             </div>
             <div class="video-thumbnail">
                 <iframe src="https://www.youtube.com/embed/ZHyyQ-OtHoM" title="Capitolo 3 - L'Alimentazione" allowfullscreen></iframe>
                 <div class="video-thumbnail-info">
-                    <h4>Capitolo 3 - L'Alimentazione</h4>
+                    <h4>03. L'Alimentazione</h4>
                     <p>Un nuovo approccio alimentare</p>
                 </div>
             </div>
             <div class="video-thumbnail">
                 <iframe src="https://www.youtube.com/embed/nKXzXPH1-0g" title="Capitolo 4 - La Guarigione" allowfullscreen></iframe>
                 <div class="video-thumbnail-info">
-                    <h4>Capitolo 4 - La Guarigione</h4>
+                    <h4>04. La Guarigione è un Diritto degli Invincibili</h4>
                     <p>Un diritto degli invincibili</p>
                 </div>
             </div>
             <div class="video-thumbnail">
                 <iframe src="https://www.youtube.com/embed/knqZcrdI3M4" title="Capitolo 5 - La Fiducia" allowfullscreen></iframe>
                 <div class="video-thumbnail-info">
-                    <h4>Capitolo 5 - La Fiducia</h4>
+                    <h4>05. La Fiducia</h4>
                     <p>Avere fiducia nella vita</p>
                 </div>
             </div>
             <div class="video-thumbnail">
                 <iframe src="https://www.youtube.com/embed/W91jfwgU3ew" title="Capitolo 6 - Una Buona Salute" allowfullscreen></iframe>
                 <div class="video-thumbnail-info">
-                    <h4>Capitolo 6 - Una Buona Salute</h4>
+                    <h4>06. Una Buona Salute</h4>
                     <p>Vivere bene con il Parkinson</p>
                 </div>
             </div>
             <div class="video-thumbnail">
                 <iframe src="https://www.youtube.com/embed/OvuxZdeOoNc" title="Capitolo 7 - Il Coraggio" allowfullscreen></iframe>
                 <div class="video-thumbnail-info">
-                    <h4>Capitolo 7 - Il Coraggio</h4>
+                    <h4>07. Il Coraggio</h4>
                     <p>L'esperienza del paracadute</p>
                 </div>
             </div>
             <div class="video-thumbnail">
                 <iframe src="https://www.youtube.com/embed/seDD6Zsu8vQ" title="Capitolo 8 - I Bagni Freddi" allowfullscreen></iframe>
                 <div class="video-thumbnail-info">
-                    <h4>Capitolo 8 - I Bagni Freddi</h4>
+                    <h4>08. I Bagni Freddi</h4>
                     <p>La sfida con il freddo</p>
+                </div>
+            </div>
+            <div class="video-thumbnail">
+                <iframe src="https://www.youtube.com/embed/b-muLw53ftg" title="Capitolo 8bis - I Bagni Freddi (secondo video)" allowfullscreen></iframe>
+                <div class="video-thumbnail-info">
+                    <h4>08bis. I Bagni Freddi (secondo video)</h4>
+                    <p>Un'altra esperienza nel freddo</p>
+                </div>
+            </div>
+            <div class="video-thumbnail">
+                <iframe src="https://www.youtube.com/embed/ZoAqWgpiih8" title="Capitolo 9 - Vado bene così come sono" allowfullscreen></iframe>
+                <div class="video-thumbnail-info">
+                    <h4>09. Vado bene così come sono</h4>
+                    <p>Accettazione e amore per sé</p>
+                </div>
+            </div>
+            <div class="video-thumbnail">
+                <iframe src="https://www.youtube.com/embed/mGXab_HwmiM" title="Capitolo 10 - Il mio 2023" allowfullscreen></iframe>
+                <div class="video-thumbnail-info">
+                    <h4>10. Il mio 2023</h4>
+                    <p>Bilancio dell'anno</p>
+                </div>
+            </div>
+            <div class="video-thumbnail">
+                <iframe src="https://www.youtube.com/embed/IJTZ65iAiag" title="Capitolo 11 - Una nuova consapevolezza" allowfullscreen></iframe>
+                <div class="video-thumbnail-info">
+                    <h4>11. Una nuova consapevolezza</h4>
+                    <p>Verso una nuova visione</p>
+                </div>
+            </div>
+            <div class="video-thumbnail">
+                <iframe src="https://www.youtube.com/embed/lftQu5c_bWU" title="Capitolo 12 - Infondere coraggio e forza" allowfullscreen></iframe>
+                <div class="video-thumbnail-info">
+                    <h4>12. Un bravo medico infonde coraggio e forza</h4>
+                    <p>L'incontro con il nuovo neurologo</p>
+                </div>
+            </div>
+            <div class="video-thumbnail">
+                <iframe src="https://www.youtube.com/embed/15wepfgoEgM" title="Capitolo 13 - Preparare la vittoria" allowfullscreen></iframe>
+                <div class="video-thumbnail-info">
+                    <h4>13. Altri aspetti della malattia</h4>
+                    <p>Preparare la vittoria</p>
+                </div>
+            </div>
+            <div class="video-thumbnail">
+                <iframe src="https://www.youtube.com/embed/j7g7378xp4U" title="Capitolo 14 - Smetti di preoccuparti" allowfullscreen></iframe>
+                <div class="video-thumbnail-info">
+                    <h4>14. Smetti di preoccuparti</h4>
+                    <p>Vivere nel presente</p>
+                </div>
+            </div>
+            <div class="video-thumbnail">
+                <iframe src="https://www.youtube.com/embed/1BDyCGgFgE8" title="Capitolo 14bis - Con i miei figli" allowfullscreen></iframe>
+                <div class="video-thumbnail-info">
+                    <h4>14bis. Con i miei figli</h4>
+                    <p>Escursione in montagna</p>
+                </div>
+            </div>
+            <div class="video-thumbnail">
+                <iframe src="https://www.youtube.com/embed/DeDGTR5ZVT8" title="Capitolo 15 - Vinci la paura" allowfullscreen></iframe>
+                <div class="video-thumbnail-info">
+                    <h4>15. Vinci la paura</h4>
+                    <p>Superare i propri limiti</p>
+                </div>
+            </div>
+            <div class="video-thumbnail">
+                <iframe src="https://www.youtube.com/embed/x5RD6EZBNkU" title="Capitolo 16 - Rialzati sempre" allowfullscreen></iframe>
+                <div class="video-thumbnail-info">
+                    <h4>16. Rialzati sempre</h4>
+                    <p>Non arrendersi mai</p>
+                </div>
+            </div>
+            <div class="video-thumbnail">
+                <iframe src="https://www.youtube.com/embed/Qf56tPo89UM" title="Epilogo" allowfullscreen></iframe>
+                <div class="video-thumbnail-info">
+                    <h4>17. Epilogo</h4>
+                    <p>Riflessioni finali</p>
                 </div>
             </div>
         </div>
@@ -745,8 +820,29 @@
         </p>
     </footer>
 
+    <!-- Scroll to top button -->
+    <div class="scroll-to-top" onclick="scrollToTop()">↑</div>
+
     <!-- Smooth Scroll Script -->
     <script>
+        // Scroll to top function
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Show/hide scroll to top button
+        window.onscroll = function() {
+            const scrollButton = document.querySelector('.scroll-to-top');
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                scrollButton.classList.add('visible');
+            } else {
+                scrollButton.classList.remove('visible');
+            }
+        };
+
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
