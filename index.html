@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Oltre il Parkinson - Davide Ferrero</title>
+    <meta name="description" content="Il mio cammino di resilienza, speranza e rinascita. Un libro di Davide Ferrero sulla guarigione dal Parkinson attraverso digiuno, alimentazione e bagni freddi.">
     <style>
         * {
             margin: 0;
@@ -72,6 +73,35 @@
             font-size: 1.5rem;
             font-weight: bold;
             margin-top: 1rem;
+        }
+
+        /* Amazon Button */
+        .amazon-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            background: linear-gradient(135deg, #FF9900 0%, #FFB347 100%);
+            color: #111;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(255,153,0,0.4);
+            margin-top: 1rem;
+        }
+
+        .amazon-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(255,153,0,0.6);
+            background: linear-gradient(135deg, #FFB347 0%, #FF9900 100%);
+        }
+
+        .amazon-btn svg {
+            width: 24px;
+            height: 24px;
         }
 
         /* Navigation */
@@ -179,12 +209,12 @@
         /* Book Section */
         .book-section {
             background: #f8f9fa;
+            text-align: center;
         }
 
         .book-content {
             max-width: 800px;
             margin: 0 auto;
-            text-align: center;
         }
 
         .book-info h3 {
@@ -197,6 +227,10 @@
             font-size: 1.1rem;
             margin-bottom: 1.5rem;
             line-height: 1.8;
+        }
+
+        .book-cta {
+            margin-top: 2rem;
         }
 
         /* Features */
@@ -251,9 +285,9 @@
 
         .video-thumbnails {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 0.8rem;
+            margin-top: 2rem;
             max-width: 1400px;
             margin-left: auto;
             margin-right: auto;
@@ -261,11 +295,13 @@
 
         .video-thumbnail {
             background: rgba(255,255,255,0.1);
-            border-radius: 10px;
+            border-radius: 6px;
             overflow: hidden;
             transition: transform 0.3s;
             backdrop-filter: blur(10px);
-            border: 2px solid rgba(255,255,255,0.2);
+            border: 1px solid rgba(255,255,255,0.2);
+            display: flex;
+            flex-direction: column;
         }
 
         .video-thumbnail:hover {
@@ -274,23 +310,32 @@
 
         .video-thumbnail iframe {
             width: 100%;
-            height: 200px;
+            height: 40px !important;
             border: none;
+            flex-shrink: 0;
         }
 
         .video-thumbnail-info {
-            padding: 1.5rem;
+            padding: 0.4rem 0.6rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         .video-thumbnail-info h4 {
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
+            font-size: 0.75rem;
+            margin-bottom: 0.15rem;
             color: white;
+            line-height: 1.1;
+            font-weight: 600;
         }
 
         .video-thumbnail-info p {
-            font-size: 0.95rem;
-            opacity: 0.9;
+            font-size: 0.65rem;
+            opacity: 0.85;
+            line-height: 1;
+            margin: 0;
         }
 
         /* Testimonials */
@@ -407,6 +452,10 @@
             padding: 2rem;
         }
 
+        footer .amazon-btn {
+            margin: 1rem 0;
+        }
+
         /* Scroll to top button */
         .scroll-to-top {
             position: fixed;
@@ -472,6 +521,11 @@
                 width: 45px;
                 height: 45px;
             }
+
+            .amazon-btn {
+                font-size: 1rem;
+                padding: 0.8rem 1.5rem;
+            }
         }
 
         /* Animations */
@@ -501,6 +555,10 @@
             <h1>Oltre il Parkinson</h1>
             <p class="subtitle">Il mio cammino di resilienza, speranza e rinascita</p>
             <p class="author">Davide Ferrero</p>
+            <a href="https://www.amazon.it/dp/B0F1683VJQ" target="_blank" class="amazon-btn">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+                Acquista su Amazon
+            </a>
         </div>
     </header>
 
@@ -525,7 +583,9 @@
                 Davide Ferrero condivide il suo percorso di guarigione attraverso digiuno, 
                 alimentazione consapevole, bagni freddi e una nuova visione della vita.
             </p>
-            <a href="#libro" class="cta-button">Scopri il Libro</a>
+            <a href="https://www.amazon.it/dp/B0F1683VJQ" target="_blank" class="amazon-btn" style="background: white; color: #FF9900;">
+                🛒 Acquista ora su Amazon
+            </a>
         </div>
     </section>
 
@@ -541,6 +601,11 @@
                     e il suo approccio non convenzionale alla guarigione, combinando scienza 
                     igienista, digiunoterapia, bagni freddi e una profonda trasformazione interiore.
                 </p>
+                <div class="book-cta">
+                    <a href="https://www.amazon.it/dp/B0F1683VJQ" target="_blank" class="amazon-btn">
+                        📦 Acquista su Amazon
+                    </a>
+                </div>
             </div>
         </div>
     </section>
@@ -602,133 +667,133 @@
         </p>
         <div class="video-thumbnails">
             <div class="video-thumbnail">
-                <iframe src="https://www.youtube.com/embed/5_hVG-nAmNM" title="Capitolo 1 - Il Digiuno" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/5_hVG-nAmNM" title="01. Il Digiuno" allowfullscreen></iframe>
                 <div class="video-thumbnail-info">
                     <h4>01. Il Digiuno</h4>
                     <p>La pratica del digiuno terapeutico</p>
                 </div>
             </div>
             <div class="video-thumbnail">
-                <iframe src="https://www.youtube.com/embed/VKmit766neY" title="Capitolo 2 - Le Crisi Eliminative" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/VKmit766neY" title="02. Le Crisi Eliminative" allowfullscreen></iframe>
                 <div class="video-thumbnail-info">
                     <h4>02. Le Crisi Eliminative</h4>
                     <p>Il processo di disintossicazione</p>
                 </div>
             </div>
             <div class="video-thumbnail">
-                <iframe src="https://www.youtube.com/embed/ZHyyQ-OtHoM" title="Capitolo 3 - L'Alimentazione" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/ZHyyQ-OtHoM" title="03. L'Alimentazione" allowfullscreen></iframe>
                 <div class="video-thumbnail-info">
                     <h4>03. L'Alimentazione</h4>
                     <p>Un nuovo approccio alimentare</p>
                 </div>
             </div>
             <div class="video-thumbnail">
-                <iframe src="https://www.youtube.com/embed/nKXzXPH1-0g" title="Capitolo 4 - La Guarigione" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/nKXzXPH1-0g" title="04. La Guarigione" allowfullscreen></iframe>
                 <div class="video-thumbnail-info">
                     <h4>04. La Guarigione è un Diritto degli Invincibili</h4>
                     <p>Un diritto degli invincibili</p>
                 </div>
             </div>
             <div class="video-thumbnail">
-                <iframe src="https://www.youtube.com/embed/knqZcrdI3M4" title="Capitolo 5 - La Fiducia" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/knqZcrdI3M4" title="05. La Fiducia" allowfullscreen></iframe>
                 <div class="video-thumbnail-info">
                     <h4>05. La Fiducia</h4>
                     <p>Avere fiducia nella vita</p>
                 </div>
             </div>
             <div class="video-thumbnail">
-                <iframe src="https://www.youtube.com/embed/W91jfwgU3ew" title="Capitolo 6 - Una Buona Salute" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/W91jfwgU3ew" title="06. Una Buona Salute" allowfullscreen></iframe>
                 <div class="video-thumbnail-info">
                     <h4>06. Una Buona Salute</h4>
                     <p>Vivere bene con il Parkinson</p>
                 </div>
             </div>
             <div class="video-thumbnail">
-                <iframe src="https://www.youtube.com/embed/OvuxZdeOoNc" title="Capitolo 7 - Il Coraggio" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/OvuxZdeOoNc" title="07. Il Coraggio" allowfullscreen></iframe>
                 <div class="video-thumbnail-info">
                     <h4>07. Il Coraggio</h4>
                     <p>L'esperienza del paracadute</p>
                 </div>
             </div>
             <div class="video-thumbnail">
-                <iframe src="https://www.youtube.com/embed/seDD6Zsu8vQ" title="Capitolo 8 - I Bagni Freddi" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/seDD6Zsu8vQ" title="08. I Bagni Freddi" allowfullscreen></iframe>
                 <div class="video-thumbnail-info">
                     <h4>08. I Bagni Freddi</h4>
                     <p>La sfida con il freddo</p>
                 </div>
             </div>
             <div class="video-thumbnail">
-                <iframe src="https://www.youtube.com/embed/b-muLw53ftg" title="Capitolo 8bis - I Bagni Freddi (secondo video)" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/b-muLw53ftg" title="08bis. Bagni Freddi 2" allowfullscreen></iframe>
                 <div class="video-thumbnail-info">
-                    <h4>08bis. I Bagni Freddi (secondo video)</h4>
+                    <h4>08bis. Bagni Freddi 2</h4>
                     <p>Un'altra esperienza nel freddo</p>
                 </div>
             </div>
             <div class="video-thumbnail">
-                <iframe src="https://www.youtube.com/embed/ZoAqWgpiih8" title="Capitolo 9 - Vado bene così come sono" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/ZoAqWgpiih8" title="09. Vado Bene Così" allowfullscreen></iframe>
                 <div class="video-thumbnail-info">
-                    <h4>09. Vado bene così come sono</h4>
+                    <h4>09. Vado Bene Così Come Sono</h4>
                     <p>Accettazione e amore per sé</p>
                 </div>
             </div>
             <div class="video-thumbnail">
-                <iframe src="https://www.youtube.com/embed/mGXab_HwmiM" title="Capitolo 10 - Il mio 2023" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/mGXab_HwmiM" title="10. Il Mio 2023" allowfullscreen></iframe>
                 <div class="video-thumbnail-info">
-                    <h4>10. Il mio 2023</h4>
+                    <h4>10. Il Mio 2023</h4>
                     <p>Bilancio dell'anno</p>
                 </div>
             </div>
             <div class="video-thumbnail">
-                <iframe src="https://www.youtube.com/embed/IJTZ65iAiag" title="Capitolo 11 - Una nuova consapevolezza" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/IJTZ65iAiag" title="11. Nuova Consapevolezza" allowfullscreen></iframe>
                 <div class="video-thumbnail-info">
-                    <h4>11. Una nuova consapevolezza</h4>
+                    <h4>11. Una Nuova Consapevolezza</h4>
                     <p>Verso una nuova visione</p>
                 </div>
             </div>
             <div class="video-thumbnail">
-                <iframe src="https://www.youtube.com/embed/lftQu5c_bWU" title="Capitolo 12 - Infondere coraggio e forza" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/lftQu5c_bWU" title="12. Infondere Coraggio" allowfullscreen></iframe>
                 <div class="video-thumbnail-info">
-                    <h4>12. Un bravo medico infonde coraggio e forza</h4>
+                    <h4>12. Un Bravo Medico Infonde Coraggio e Forza</h4>
                     <p>L'incontro con il nuovo neurologo</p>
                 </div>
             </div>
             <div class="video-thumbnail">
-                <iframe src="https://www.youtube.com/embed/15wepfgoEgM" title="Capitolo 13 - Preparare la vittoria" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/15wepfgoEgM" title="13. Preparare la Vittoria" allowfullscreen></iframe>
                 <div class="video-thumbnail-info">
-                    <h4>13. Altri aspetti della malattia</h4>
+                    <h4>13. Altri Aspetti della Malattia</h4>
                     <p>Preparare la vittoria</p>
                 </div>
             </div>
             <div class="video-thumbnail">
-                <iframe src="https://www.youtube.com/embed/j7g7378xp4U" title="Capitolo 14 - Smetti di preoccuparti" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/j7g7378xp4U" title="14. Smetti di Preoccuparti" allowfullscreen></iframe>
                 <div class="video-thumbnail-info">
-                    <h4>14. Smetti di preoccuparti</h4>
+                    <h4>14. Smetti di Preoccuparti</h4>
                     <p>Vivere nel presente</p>
                 </div>
             </div>
             <div class="video-thumbnail">
-                <iframe src="https://www.youtube.com/embed/1BDyCGgFgE8" title="Capitolo 14bis - Con i miei figli" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/1BDyCGgFgE8" title="14bis. Con i Miei Figli" allowfullscreen></iframe>
                 <div class="video-thumbnail-info">
-                    <h4>14bis. Con i miei figli</h4>
+                    <h4>14bis. Con i Miei Figli</h4>
                     <p>Escursione in montagna</p>
                 </div>
             </div>
             <div class="video-thumbnail">
-                <iframe src="https://www.youtube.com/embed/DeDGTR5ZVT8" title="Capitolo 15 - Vinci la paura" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/DeDGTR5ZVT8" title="15. Vinci la Paura" allowfullscreen></iframe>
                 <div class="video-thumbnail-info">
-                    <h4>15. Vinci la paura</h4>
+                    <h4>15. Vinci la Paura</h4>
                     <p>Superare i propri limiti</p>
                 </div>
             </div>
             <div class="video-thumbnail">
-                <iframe src="https://www.youtube.com/embed/x5RD6EZBNkU" title="Capitolo 16 - Rialzati sempre" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/x5RD6EZBNkU" title="16. Rialzati Sempre" allowfullscreen></iframe>
                 <div class="video-thumbnail-info">
-                    <h4>16. Rialzati sempre</h4>
+                    <h4>16. Rialzati Sempre</h4>
                     <p>Non arrendersi mai</p>
                 </div>
             </div>
             <div class="video-thumbnail">
-                <iframe src="https://www.youtube.com/embed/Qf56tPo89UM" title="Epilogo" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/Qf56tPo89UM" title="17. Epilogo" allowfullscreen></iframe>
                 <div class="video-thumbnail-info">
                     <h4>17. Epilogo</h4>
                     <p>Riflessioni finali</p>
@@ -814,16 +879,19 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Davide Ferrero - Oltre il Parkinson. Tutti i diritti riservati.</p>
+        <p>&copy; 2025 Davide Ferrero - Oltre il Parkinson. Tutti i diritti riservati.</p>
         <p style="margin-top: 0.5rem; font-size: 0.9rem;">
             ISBN: 979-12-24000-14-3 | Pubblicato da Youcanprint
         </p>
+        <a href="https://www.amazon.it/dp/B0F1683VJQ" target="_blank" class="amazon-btn">
+            🛒 Acquista su Amazon
+        </a>
     </footer>
 
     <!-- Scroll to top button -->
     <div class="scroll-to-top" onclick="scrollToTop()">↑</div>
 
-    <!-- Smooth Scroll Script -->
+    <!-- Scripts -->
     <script>
         // Scroll to top function
         function scrollToTop() {
@@ -843,6 +911,7 @@
             }
         };
 
+        // Smooth scroll for navigation
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -853,6 +922,15 @@
                         block: 'start'
                     });
                 }
+            });
+        });
+
+        // Force iframe dimensions
+        document.addEventListener('DOMContentLoaded', function() {
+            const iframes = document.querySelectorAll('.video-thumbnail iframe');
+            iframes.forEach(iframe => {
+                iframe.style.height = '40px';
+                iframe.style.minHeight = '40px';
             });
         });
 
