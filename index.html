@@ -332,21 +332,19 @@
             transform: translateY(-5px);
         }
 
-        /* Pulsante fullscreen SOPRA TUTTO il box video - COPRE TUTTA L'ALTEZZA */
+        /* Pulsante fullscreen SOPRA il video - COPRE SOLO L'AREA VIDEO */
         .fullscreen-btn {
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
-            bottom: 0;
             z-index: 20;
             background: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.3) 100%);
             color: white;
             border: none;
-            border-radius: 6px;
+            border-radius: 6px 6px 0 0;
             padding: 0.5rem;
             display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
             text-decoration: none;
@@ -354,8 +352,7 @@
             font-weight: 600;
             transition: all 0.2s;
             cursor: pointer;
-            height: 100%;
-            gap: 0.3rem;
+            height: 75px;
             text-align: center;
         }
 
@@ -363,44 +360,13 @@
             background: linear-gradient(to bottom, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.7) 50%, rgba(0,0,0,0.5) 100%);
         }
 
-        .fullscreen-btn::before {
-            content: "⛶";
-            font-size: 0.9rem;
-            margin-bottom: 0.2rem;
-        }
-
         .video-thumbnail iframe {
             width: 100%;
-            height: 50px !important;
+            height: 75px !important;
             border: none;
             flex-shrink: 0;
-            position: relative;
-            z-index: 1;
-        }
-
-        .video-thumbnail-info {
-            padding: 0.4rem 0.5rem;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            position: relative;
-            z-index: 1;
-        }
-
-        .video-thumbnail-info h4 {
-            font-size: 0.6rem;
-            margin-bottom: 0.15rem;
-            color: white;
-            line-height: 1.1;
-            font-weight: 600;
-        }
-
-        .video-thumbnail-info p {
-            font-size: 0.5rem;
-            opacity: 0.85;
-            line-height: 1;
-            margin: 0;
+            margin-top: 0;
+            display: block;
         }
 
         /* Responsive Video Grid */
@@ -794,154 +760,78 @@
             <div class="video-thumbnail">
                 <a href="https://www.youtube.com/watch?v=5_hVG-nAmNM" class="fullscreen-btn" title="Apri a schermo intero">01. Il Digiuno</a>
                 <iframe src="https://www.youtube.com/embed/5_hVG-nAmNM" title="01. Il Digiuno" allowfullscreen loading="lazy"></iframe>
-                <div class="video-thumbnail-info">
-                    <h4>01. Il Digiuno</h4>
-                    <p>La pratica del digiuno terapeutico</p>
-                </div>
             </div>
             <div class="video-thumbnail">
                 <a href="https://www.youtube.com/watch?v=VKmit766neY" class="fullscreen-btn" title="Apri a schermo intero">02. Le Crisi Eliminative</a>
                 <iframe src="https://www.youtube.com/embed/VKmit766neY" title="02. Le Crisi Eliminative" allowfullscreen loading="lazy"></iframe>
-                <div class="video-thumbnail-info">
-                    <h4>02. Le Crisi Eliminative</h4>
-                    <p>Il processo di disintossicazione</p>
-                </div>
             </div>
             <div class="video-thumbnail">
                 <a href="https://www.youtube.com/watch?v=ZHyyQ-OtHoM" class="fullscreen-btn" title="Apri a schermo intero">03. L'Alimentazione</a>
                 <iframe src="https://www.youtube.com/embed/ZHyyQ-OtHoM" title="03. L'Alimentazione" allowfullscreen loading="lazy"></iframe>
-                <div class="video-thumbnail-info">
-                    <h4>03. L'Alimentazione</h4>
-                    <p>Un nuovo approccio alimentare</p>
-                </div>
             </div>
             <div class="video-thumbnail">
                 <a href="https://www.youtube.com/watch?v=nKXzXPH1-0g" class="fullscreen-btn" title="Apri a schermo intero">04. La Guarigione</a>
                 <iframe src="https://www.youtube.com/embed/nKXzXPH1-0g" title="04. La Guarigione" allowfullscreen loading="lazy"></iframe>
-                <div class="video-thumbnail-info">
-                    <h4>04. La Guarigione è un Diritto degli Invincibili</h4>
-                    <p>Un diritto degli invincibili</p>
-                </div>
             </div>
             <div class="video-thumbnail">
                 <a href="https://www.youtube.com/watch?v=knqZcrdI3M4" class="fullscreen-btn" title="Apri a schermo intero">05. La Fiducia</a>
                 <iframe src="https://www.youtube.com/embed/knqZcrdI3M4" title="05. La Fiducia" allowfullscreen loading="lazy"></iframe>
-                <div class="video-thumbnail-info">
-                    <h4>05. La Fiducia</h4>
-                    <p>Avere fiducia nella vita</p>
-                </div>
             </div>
             <div class="video-thumbnail">
                 <a href="https://www.youtube.com/watch?v=W91jfwgU3ew" class="fullscreen-btn" title="Apri a schermo intero">06. Una Buona Salute</a>
                 <iframe src="https://www.youtube.com/embed/W91jfwgU3ew" title="06. Una Buona Salute" allowfullscreen loading="lazy"></iframe>
-                <div class="video-thumbnail-info">
-                    <h4>06. Una Buona Salute</h4>
-                    <p>Vivere bene con il Parkinson</p>
-                </div>
             </div>
             <div class="video-thumbnail">
                 <a href="https://www.youtube.com/watch?v=OvuxZdeOoNc" class="fullscreen-btn" title="Apri a schermo intero">07. Il Coraggio</a>
                 <iframe src="https://www.youtube.com/embed/OvuxZdeOoNc" title="07. Il Coraggio" allowfullscreen loading="lazy"></iframe>
-                <div class="video-thumbnail-info">
-                    <h4>07. Il Coraggio</h4>
-                    <p>L'esperienza del paracadute</p>
-                </div>
             </div>
             <div class="video-thumbnail">
                 <a href="https://www.youtube.com/watch?v=seDD6Zsu8vQ" class="fullscreen-btn" title="Apri a schermo intero">08. I Bagni Freddi</a>
                 <iframe src="https://www.youtube.com/embed/seDD6Zsu8vQ" title="08. I Bagni Freddi" allowfullscreen loading="lazy"></iframe>
-                <div class="video-thumbnail-info">
-                    <h4>08. I Bagni Freddi</h4>
-                    <p>La sfida con il freddo</p>
-                </div>
             </div>
             <div class="video-thumbnail">
                 <a href="https://www.youtube.com/watch?v=b-muLw53ftg" class="fullscreen-btn" title="Apri a schermo intero">08bis. Bagni Freddi 2</a>
                 <iframe src="https://www.youtube.com/embed/b-muLw53ftg" title="08bis. Bagni Freddi 2" allowfullscreen loading="lazy"></iframe>
-                <div class="video-thumbnail-info">
-                    <h4>08bis. Bagni Freddi 2</h4>
-                    <p>Un'altra esperienza nel freddo</p>
-                </div>
             </div>
             <div class="video-thumbnail">
                 <a href="https://www.youtube.com/watch?v=ZoAqWgpiih8" class="fullscreen-btn" title="Apri a schermo intero">09. Vado Bene Così</a>
                 <iframe src="https://www.youtube.com/embed/ZoAqWgpiih8" title="09. Vado Bene Così" allowfullscreen loading="lazy"></iframe>
-                <div class="video-thumbnail-info">
-                    <h4>09. Vado Bene Così Come Sono</h4>
-                    <p>Accettazione e amore per sé</p>
-                </div>
             </div>
             <div class="video-thumbnail">
                 <a href="https://www.youtube.com/watch?v=mGXab_HwmiM" class="fullscreen-btn" title="Apri a schermo intero">10. Il Mio 2023</a>
                 <iframe src="https://www.youtube.com/embed/mGXab_HwmiM" title="10. Il Mio 2023" allowfullscreen loading="lazy"></iframe>
-                <div class="video-thumbnail-info">
-                    <h4>10. Il Mio 2023</h4>
-                    <p>Bilancio dell'anno</p>
-                </div>
             </div>
             <div class="video-thumbnail">
                 <a href="https://www.youtube.com/watch?v=IJTZ65iAiag" class="fullscreen-btn" title="Apri a schermo intero">11. Nuova Consapevolezza</a>
                 <iframe src="https://www.youtube.com/embed/IJTZ65iAiag" title="11. Nuova Consapevolezza" allowfullscreen loading="lazy"></iframe>
-                <div class="video-thumbnail-info">
-                    <h4>11. Una Nuova Consapevolezza</h4>
-                    <p>Verso una nuova visione</p>
-                </div>
             </div>
             <div class="video-thumbnail">
                 <a href="https://www.youtube.com/watch?v=lftQu5c_bWU" class="fullscreen-btn" title="Apri a schermo intero">12. Infondere Coraggio</a>
                 <iframe src="https://www.youtube.com/embed/lftQu5c_bWU" title="12. Infondere Coraggio" allowfullscreen loading="lazy"></iframe>
-                <div class="video-thumbnail-info">
-                    <h4>12. Un Bravo Medico Infonde Coraggio e Forza</h4>
-                    <p>L'incontro con il nuovo neurologo</p>
-                </div>
             </div>
             <div class="video-thumbnail">
                 <a href="https://www.youtube.com/watch?v=15wepfgoEgM" class="fullscreen-btn" title="Apri a schermo intero">13. Preparare la Vittoria</a>
                 <iframe src="https://www.youtube.com/embed/15wepfgoEgM" title="13. Preparare la Vittoria" allowfullscreen loading="lazy"></iframe>
-                <div class="video-thumbnail-info">
-                    <h4>13. Altri Aspetti della Malattia</h4>
-                    <p>Preparare la vittoria</p>
-                </div>
             </div>
             <div class="video-thumbnail">
                 <a href="https://www.youtube.com/watch?v=j7g7378xp4U" class="fullscreen-btn" title="Apri a schermo intero">14. Smetti di Preoccuparti</a>
                 <iframe src="https://www.youtube.com/embed/j7g7378xp4U" title="14. Smetti di Preoccuparti" allowfullscreen loading="lazy"></iframe>
-                <div class="video-thumbnail-info">
-                    <h4>14. Smetti di Preoccuparti</h4>
-                    <p>Vivere nel presente</p>
-                </div>
             </div>
             <div class="video-thumbnail">
                 <a href="https://www.youtube.com/watch?v=1BDyCGgFgE8" class="fullscreen-btn" title="Apri a schermo intero">14bis. Con i Miei Figli</a>
                 <iframe src="https://www.youtube.com/embed/1BDyCGgFgE8" title="14bis. Con i Miei Figli" allowfullscreen loading="lazy"></iframe>
-                <div class="video-thumbnail-info">
-                    <h4>14bis. Con i Miei Figli</h4>
-                    <p>Escursione in montagna</p>
-                </div>
             </div>
             <div class="video-thumbnail">
                 <a href="https://www.youtube.com/watch?v=DeDGTR5ZVT8" class="fullscreen-btn" title="Apri a schermo intero">15. Vinci la Paura</a>
                 <iframe src="https://www.youtube.com/embed/DeDGTR5ZVT8" title="15. Vinci la Paura" allowfullscreen loading="lazy"></iframe>
-                <div class="video-thumbnail-info">
-                    <h4>15. Vinci la Paura</h4>
-                    <p>Superare i propri limiti</p>
-                </div>
             </div>
             <div class="video-thumbnail">
                 <a href="https://www.youtube.com/watch?v=x5RD6EZBNkU" class="fullscreen-btn" title="Apri a schermo intero">16. Rialzati Sempre</a>
                 <iframe src="https://www.youtube.com/embed/x5RD6EZBNkU" title="16. Rialzati Sempre" allowfullscreen loading="lazy"></iframe>
-                <div class="video-thumbnail-info">
-                    <h4>16. Rialzati Sempre</h4>
-                    <p>Non arrendersi mai</p>
-                </div>
             </div>
             <div class="video-thumbnail">
                 <a href="https://www.youtube.com/watch?v=Qf56tPo89UM" class="fullscreen-btn" title="Apri a schermo intero">17. Epilogo</a>
                 <iframe src="https://www.youtube.com/embed/Qf56tPo89UM" title="17. Epilogo" allowfullscreen loading="lazy"></iframe>
-                <div class="video-thumbnail-info">
-                    <h4>17. Epilogo</h4>
-                    <p>Riflessioni finali</p>
-                </div>
             </div>
         </div>
     </section>
@@ -1081,8 +971,8 @@
         document.addEventListener('DOMContentLoaded', function() {
             const iframes = document.querySelectorAll('.video-thumbnail iframe');
             iframes.forEach(iframe => {
-                iframe.style.height = '50px';
-                iframe.style.minHeight = '50px';
+                iframe.style.height = '75px';
+                iframe.style.minHeight = '75px';
             });
         });
 
