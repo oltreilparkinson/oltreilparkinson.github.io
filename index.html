@@ -283,14 +283,16 @@
             margin-bottom: 2rem;
         }
 
+        /* VIDEO THUMBNAILS - 3 PER RIGA */
         .video-thumbnails {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 0.8rem;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
             margin-top: 2rem;
             max-width: 1400px;
             margin-left: auto;
             margin-right: auto;
+            padding: 0 1rem;
         }
 
         .video-thumbnail {
@@ -310,13 +312,13 @@
 
         .video-thumbnail iframe {
             width: 100%;
-            height: 40px !important;
+            height: 35px !important;
             border: none;
             flex-shrink: 0;
         }
 
         .video-thumbnail-info {
-            padding: 0.4rem 0.6rem;
+            padding: 0.5rem 0.7rem;
             flex-grow: 1;
             display: flex;
             flex-direction: column;
@@ -324,18 +326,31 @@
         }
 
         .video-thumbnail-info h4 {
-            font-size: 0.75rem;
-            margin-bottom: 0.15rem;
+            font-size: 0.7rem;
+            margin-bottom: 0.2rem;
             color: white;
-            line-height: 1.1;
+            line-height: 1.2;
             font-weight: 600;
         }
 
         .video-thumbnail-info p {
-            font-size: 0.65rem;
+            font-size: 0.6rem;
             opacity: 0.85;
-            line-height: 1;
+            line-height: 1.1;
             margin: 0;
+        }
+
+        /* Responsive Video Grid */
+        @media (max-width: 1200px) {
+            .video-thumbnails {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .video-thumbnails {
+                grid-template-columns: 1fr;
+            }
         }
 
         /* Testimonials */
@@ -509,10 +524,6 @@
 
             .book-cover-hero {
                 max-width: 250px;
-            }
-
-            .video-thumbnails {
-                grid-template-columns: 1fr;
             }
 
             .scroll-to-top {
@@ -860,7 +871,7 @@
         <p style="text-align: center; font-size: 1.2rem; margin-bottom: 2rem;">
             Per informazioni sul libro, per condividere la tua esperienza o per ricevere supporto
         </p>
-        <form class="contact-form" action="https://formsubmit.co/your-email@example.com" method="POST">
+        <form class="contact-form" action="https://formspree.io/f/xeepakov" method="POST">
             <div class="form-group">
                 <label for="name">Nome e Cognome</label>
                 <input type="text" id="name" name="name" required>
@@ -881,8 +892,17 @@
     <footer>
         <p>&copy; 2025 Davide Ferrero - Oltre il Parkinson. Tutti i diritti riservati.</p>
         <p style="margin-top: 0.5rem; font-size: 0.9rem;">
-            ISBN: 979-12-24000-14-3 | Pubblicato da Youcanprint
+            ISBN: 979-12-24000-14-3 | Pubblicato da Youcanprint<br>
+        <!-- Inizio Codice ShinyStat -->
+<script src="//codice.shinystat.com/cgi-bin/getcod.cgi?USER=SS-55019705-3422b"></script>
+<noscript>
+<a href="https://www.shinystat.com/it/" target="_top">
+<img src="//www.shinystat.com/cgi-bin/shinystat.cgi?USER=SS-55019705-3422b" alt="Statistiche web" style="border:0px" /></a>
+</noscript>
+<!-- Fine Codice ShinyStat -->
+
         </p>
+        
         <a href="https://www.amazon.it/dp/B0F1683VJQ" target="_blank" class="amazon-btn">
             🛒 Acquista su Amazon
         </a>
@@ -929,8 +949,8 @@
         document.addEventListener('DOMContentLoaded', function() {
             const iframes = document.querySelectorAll('.video-thumbnail iframe');
             iframes.forEach(iframe => {
-                iframe.style.height = '40px';
-                iframe.style.minHeight = '40px';
+                iframe.style.height = '35px';
+                iframe.style.minHeight = '35px';
             });
         });
 
